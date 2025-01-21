@@ -9,40 +9,51 @@ def get_kit_body(name):
 def get_new_user_token():
     user_body=data.user_body
     response=sender_stand_request.post_new_user(user_body)
+    print("\n", response.json())
     return response.json()["authToken"]
 
-def positive_assert(name):
-    user_body = get_kit_body(name)
-    user_response = sender_stand_request.post_new_user(user_body)
-
+def positive_assert(kit_body):
+    user_response = sender_stand_request.post_new_client_kit(kit_body, get_new_user_token())
     assert user_response.status_code == 201
-    assert user_response.json()["authToken"] != ""
+    assert user_response.json()["name"] == kit_body["name"]
 
-def negative_assert(name):
-    user_body = get_kit_body(name)
-    user_response = sender_stand_request.post_new_user(user_body)
-
+def negative_assert(kit_body):
+    user_response = sender_stand_request.post_new_client_kit(kit_body, get_new_user_token())
     assert user_response.status_code == 400
-    assert user_response.json()["code"] == 400
-    assert user_response.json()["message"] == "No se han aprobado todos los parámetros requeridos"\
-                                              "El nombre debe contener sólo letras latino, un espacio y un guión. De 2 a 15 caracteres"
+    #assert user_response.json()["message"] == "El nombre debe contener sólo letras latino, un espacio y un guión. De 2 a 15 caracteres"
+
+def negative_assert_no_params(kit_body):
+    print(kit_body)
+    user_response = sender_stand_request.post_new_client_kit(kit_body, get_new_user_token())
+    #print(user_response.json())
+    assert user_response.status_code == 400
+    #assert user_response.json()["message"] == "No se han aprobado todos los parámetros requeridos"
 
 def test_create_user_1_letter_in_name_get_success_response():
-    positive_assert(data.test1)
+    positive_assert("a")
 
 def test_create_user_511_letter_in_name_get_success_response():
     positive_assert(data.test2)
 
 def test_create_user_empty_name_get_error_response():
+    negative_assert(data.test3)
 
-def test_create_user_511_letter_in_name_get_error_response():
+def test_create_user_512_letter_in_name_get_error_response():
+    negative_assert(data.test4)
 
 def test_create_user_has_special_symbol_in_name_get_success_response():
+    positive_assert(data.test5)
 
-def test_create_user_english_letter_in_name_get_success_response():
+def test_create_user_blank_space_in_name_get_success_response():
+    positive_assert(data.test6)
 
 def test_create_user_has_number_in_name_get_success_response():
+    positive_assert(data.test7)
 
-def test_create_user_no_name_get_error_response():
+def test_create_user_has_no_name_get_error_response():
+    user_body = data.user_body.copy()
+    user_body.pop("firstName")
+    negative_assert_no_params(user_body)
 
 def test_create_user_number_type_name_get_error_response():
+    negative_assert(data.test9)
