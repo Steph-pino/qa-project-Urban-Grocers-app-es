@@ -43,6 +43,6 @@ Ejecutar las Pruebas:
 
 Para ejecutar las pruebas con PyTest, usa el siguiente comando en la terminal:
 
-pytest <qa-project-Urban-Grocers-app-es>
+pytest qa-project-Urban-Grocers-app-es
 
-Este proyecto fue desarrollado por Stephanie Pino.# Proyecto Urban Grocers 
+Este proyecto fue desarrollado por Stephanie Pino para el Sprint 7
