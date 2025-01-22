@@ -1,16 +1,22 @@
-qa-project-Urban-Grocers-app-es
+# qa-project-Urban-Grocers-app-es
 
 Descripción del Proyecto:
 Este proyecto tiene como objetivo realizar pruebas de la API de la aplicación *Urban Grocers*, específicamente en la creación de un kit para usuarios en la plataforma. 
 
-Estructura del Proyecto:
+# Archivos y directorios:
 - configuration.py: Configuración para las rutas y credenciales necesarias para interactuar con la API.
 - data.py: Datos que se utilizan en las pruebas.
 - sender_stand_request.py: Archivo que maneja las solicitudes para la creación de usuarios y kits.
 - create_kit_name_kit_test.py: Contiene la lista de comprobación para las pruebas.
 - .gitignore: Archivos y carpetas que no deben ser seguidos por Git.
 
-Instalación y Uso:
+# Tecnologías Utilizadas
+
+- **Python**: Lenguaje de programación principal del proyecto.
+- **pytest**: Framework de pruebas utilizado para automatizar y gestionar las pruebas.
+- **Requests**: Biblioteca de Python para realizar solicitudes HTTP.
+
+# Instalación y Uso:
 
 1. Clonar el repositorio:
 Abre la terminal y navega al directorio donde quieres almacenar tus proyectos.
@@ -34,15 +40,25 @@ Abre PyCharm y selecciona Archivo → Abrir, luego selecciona la carpeta qa-proj
 5. Iniciar el servidor:
 Una vez el servidor se inicie, abre el navegador y accede a la URL de la API: <url-del-servidor>/docs/
 
-Procedimiento para Crear un Kit:
+# Procedimiento para Crear un Kit:
 
 1. Crear un usuario: Envía una solicitud para crear un nuevo usuario y obtener el **authToken**.
 2. Crear un kit: Con el **authToken** obtenido, envía una solicitud para crear un kit para ese usuario. 
 
-Ejecutar las Pruebas:
+# Ejecutar las Pruebas:
 
 Para ejecutar las pruebas con PyTest, usa el siguiente comando en la terminal:
 
 pytest qa-project-Urban-Grocers-app-es
 
-Este proyecto fue desarrollado por Stephanie Pino para el Sprint 7
+# Contribuciones
+
+Si deseas contribuir, por favor sigue los pasos:
+
+1. Realiza un fork del proyecto.
+2. Crea una rama con tus cambios: `git checkout -b mi-rama`.
+3. Envía un pull request describiendo tus modificaciones.
+
+---
+
+**Autor**: Stephanie Pino para el Sprint 7
