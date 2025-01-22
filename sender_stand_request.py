@@ -16,7 +16,3 @@ def post_new_client_kit(kit_body, auth_token):
                          json=kit_body,
                          headers=headers_dict)
 
-
-
-    # Si utilizas el diccionario de datos del archivo data.py una vez más, aplícale la función copy().
-    # Es mejor no hacer ningún cambio en el diccionario de origen, ya que esto puede generar errores.
