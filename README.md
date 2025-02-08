@@ -1,7 +1,7 @@
-# qa-project-Urban-Grocers-app-es
+# Project-Urban-Grocers-app-es
 
 Descripción del Proyecto:
-Este proyecto tiene como objetivo realizar pruebas de la API de la aplicación *Urban Grocers*, específicamente en la creación de un kit para usuarios en la plataforma. 
+Este proyecto hace parte del Bootcamp QA y tiene como objetivo realizar pruebas de la API de la aplicación *Urban Grocers*, específicamente en la creación de un kit para usuarios en la plataforma. 
 
 # Archivos y directorios:
 - configuration.py: Configuración para las rutas y credenciales necesarias para interactuar con la API.
